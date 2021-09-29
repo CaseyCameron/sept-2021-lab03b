@@ -9,23 +9,35 @@
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/home.css">
-    <title>Document</title>
+    <title>Animal Sounds</title>
 </head>
 
 <body>
     <header>
-        <div class="gutter-right logo">
-            <img src="assets/big-logo.png" />
-        </div>
+        <h1>Play Those Animal Sounds</h1>
     </header>
     <main>
         <section class="main-section">
-            
+            <div class="dog">
+                <img src="https://thumbs.dreamstime.com/b/happy-pet-dog-puppy-running-grass-jack-russell-background-banner-copy-space-128456559.jpg"
+                    alt="Dog" />
+                <audio id="dogSound" src="assets/dog.wav"></audio>
+                <button id="dogButton">Play Sound</button>
+            </div>
+
+            <div class="cat">
+                <img src="http://placekitten.com/200/300" alt="cat" />
+                <audio id="catSound" src="assets/cat.wav"></audio>
+                <button id="catButton">Play Sound</button>
+            </div>
+
+            <div class="horse">
+                <img src="https://craft-art.com/wp-content/uploads/2020/11/horse-coloring-sheets.jpg" alt="horse" />
+                <audio id="horseSound" src="assets/horse.wav"></audio>
+                <button id="horseButton">Play Sound</button>
+            </div>
         </section>
     </main>
-    <footer>
-        <div class="copy gutter-right">&copy; 2020 Alchemy Code Lab</div>
-    </footer>
 
     <script type="module" src="./app.js"></script>
 </body>
