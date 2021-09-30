@@ -19,32 +19,20 @@ const imgArr = [
 
 export function dog() {
   dogSound.play();
-  dogImg.style.transform = 'rotate(360deg)';
-  dogImg.style.transition = '1s ease';
-  setInterval(() => {
-    dogImg.style.transform = '';
-    dogImg.style.transition = '';
-  }, 1000);
+  dogImg.classList.add('selected');
+  dogImg.addEventListener('animationend', onAnimationEnd);
 };
 
 export function cat() {
   catSound.play();
-  catImg.style.transform = 'rotate(360deg)';
-  catImg.style.transition = '1s ease';
-  setInterval(() => {
-    catImg.style.transform = '';
-    catImg.style.transition = '';
-  }, 1000);
+  catImg.classList.add('selected');
+  catImg.addEventListener('animationend', onAnimationEnd);
 };
 
 export function horse() {
   horseSound.play();
-  horseImg.style.transform = 'rotate(360deg)';
-  horseImg.style.transition = '1s ease';
-  setInterval(() => {
-    horseImg.style.transform = '';
-    horseImg.style.transition = '';
-  }, 1000);
+  horseImg.classList.add('selected');
+  horseImg.addEventListener('animationend', onAnimationEnd);
 };
 
 export function random() {
@@ -53,12 +41,11 @@ export function random() {
   randomSound.play();
   randomImg.src = imgArr[sound];
 
-  randomImg.style.transform = 'rotate(360deg)';
-  randomImg.style.transition = '1s ease';
+  randomImg.classList.add('selected');
+  randomImg.addEventListener('animationend', onAnimationEnd);
+};
 
-  setInterval(() => {
-    randomImg.style.transform = '';
-    randomImg.style.transition = '';
-    randomImg.src = 'https://safetyaustraliagroup.com.au/wp-content/uploads/2019/05/image-not-found.png';
-  }, 1500);
+export const onAnimationEnd = (ev) => {
+  ev.target.classList.remove('selected');
+  randomImg.src = 'https://safetyaustraliagroup.com.au/wp-content/uploads/2019/05/image-not-found.png';
 };

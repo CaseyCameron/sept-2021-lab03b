@@ -1,4 +1,4 @@
-import { dog, cat, horse, random } from './utils/utils.js';
+import { dog, cat, horse, random, onAnimationEnd } from './utils/utils.js';
 
 const dogImg = document.getElementById('dog-img');
 const catImg = document.getElementById('cat-img');
@@ -12,8 +12,9 @@ document.addEventListener('keyup', (event) => {
   if (event.key === 'r') random();
 });
 
-dogImg.addEventListener('click', () => {
-  dog();
+dogImg.addEventListener('click', (event) => {
+  console.log(event);
+  if (event.target.id === 'dog-img') dog();
 });
 
 catImg.addEventListener('click', () => {
@@ -27,3 +28,4 @@ horseImg.addEventListener('click', () => {
 randomImg.addEventListener('click', () => {
   random();
 });
+
