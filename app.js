@@ -1,31 +1,32 @@
-import { dog, cat, horse, random, onAnimationEnd } from './utils/utils.js';
+import { animal, random } from './utils/utils.js';
 
-const dogImg = document.getElementById('dog-img');
-const catImg = document.getElementById('cat-img');
-const horseImg = document.getElementById('horse-img');
 const randomImg = document.getElementById('random-img');
+const animalArr = [
+  {
+    img: document.getElementById('dog-img'),
+    sound: new Audio('assets/dog.wav'),
+    keypress: 'd'
+  },
+  {
+    img: document.getElementById('cat-img'),
+    sound: new Audio('assets/cat.wav'),
+    keypress: 'c'
+  },
+  {
+    img: document.getElementById('horse-img'),
+    sound: new Audio('assets/horse.wav'),
+    keypress: 'h'
+  }];
 
-document.addEventListener('keyup', (event) => {
-  if (event.key === 'd') dog();
-  if (event.key === 'c') cat();
-  if (event.key === 'h') horse();
-  if (event.key === 'r') random();
-});
-
-dogImg.addEventListener('click', (event) => {
-  console.log(event);
-  if (event.target.id === 'dog-img') dog();
-});
-
-catImg.addEventListener('click', () => {
-  cat();
-});
-
-horseImg.addEventListener('click', () => {
-  horse();
+animalArr.forEach(ele => {
+  ele.img.addEventListener('click', () => {
+    animal(ele.img, ele.sound)
+  });
+  document.addEventListener('keyup', (event) => {
+    if (event.key === ele.keypress) animal(ele.img, ele.sound);
+  });
 });
 
 randomImg.addEventListener('click', () => {
   random();
 });
-
