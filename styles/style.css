@@ -57,6 +57,7 @@ img {
     height: 150px;
     border-radius: 50%;
     cursor: pointer;
+    margin: 10px;
 }
 
 header {
