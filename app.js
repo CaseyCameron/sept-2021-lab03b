@@ -1,15 +1,29 @@
-const dogSound = document.getElementById('dogSound');
-const catSound = document.getElementById('catSound');
-const horseSound = document.getElementById('horseSound');
+import { dog, cat, horse, random } from './utils/utils.js';
 
-dogButton.addEventListener('click', () => {
-  dogSound.play();
+const dogImg = document.getElementById('dog-img');
+const catImg = document.getElementById('cat-img');
+const horseImg = document.getElementById('horse-img');
+const randomImg = document.getElementById('random-img');
+
+document.addEventListener('keyup', (event) => {
+  if (event.key === 'd') dog();
+  if (event.key === 'c') cat();
+  if (event.key === 'h') horse();
+  if (event.key === 'r') random();
 });
 
-catButton.addEventListener('click', () => {
-  catSound.play();
+dogImg.addEventListener('click', () => {
+  dog();
 });
 
-horseButton.addEventListener('click', () => {
-  horseSound.play();
+catImg.addEventListener('click', () => {
+  cat();
+});
+
+horseImg.addEventListener('click', () => {
+  horse();
+});
+
+randomImg.addEventListener('click', () => {
+  random();
 });
